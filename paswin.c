@@ -4,6 +4,7 @@
  * */
 #include <ctype.h>
 #include <curses.h>
+#include <string.h>
 
 WINDOW *paswin;
 WINDOW *typewin;
@@ -22,7 +23,7 @@ int get_pas(char *pas) {
       pas--;
       mvwaddch(typewin, 1, pas - pasbgn + 1, ' ');
       wmove(typewin, 1, pas - pasbgn + 1);
-    } else if (isalnum(c)) {
+    } else if (c >= ' ' && c <= '~') {
       *pas++ = c;
       waddch(typewin, '*');
     }

@@ -11,6 +11,12 @@ wifi-gui: $(objects) wifi.o tests
 
 tests: $(objects) tests.o
 
+# run make first
+# must run as root
+.PHONY: install
+install:
+	cp ./wifi-gui /usr/local/bin/
+
 $(objects) wifi.o tests.o: %.o: %.c
 
 .PHONY: clean
