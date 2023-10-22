@@ -2,9 +2,7 @@
  *  This file includes functions related to the
  *  menu for password input.
  * */
-#include <ctype.h>
 #include <curses.h>
-#include <string.h>
 
 WINDOW *paswin;
 WINDOW *typewin;
